@@ -75,12 +75,6 @@ def generate_launch_description():
             description='Full path to turtlebot3 parameter file to load'),
 
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                [ThisLaunchFileDir(), '/turtlebot3_state_publisher.launch.py']),
-            launch_arguments={'use_sim_time': use_sim_time}.items(),
-        ),
-
-        IncludeLaunchDescription(
             PythonLaunchDescriptionSource([lidar_pkg_dir, LDS_LAUNCH_FILE]),
             launch_arguments={'port': '/dev/ttyUSB0', 'frame_id': 'base_scan'}.items(),
         ),
